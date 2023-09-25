@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Page</h1>
+    <form action="/update/<%= user._id %>" method="post" id="add-form">
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter Name" value="<%=user.name %>" />
+        </div>
+        <div class="mb-3">
+            <label for="email">Roll No:</label>
+            <input type="text" name="roll_no" class="form-control form-control-lg" placeholder="Enter roll no" value="<%= user.roll_no %>"/>
+        </div>
+        <div class="mb-3">
+            <label for="email">Department</label>
+            <input type="text" name="dept" class="form-control form-control-lg" placeholder="Enter department" value="<%= user.dept %>"/>
+        </div>
+        <div class="mb-3">
+            <label for="email">Address</label>
+            <input type="text" name="address" class="form-control form-control-lg" placeholder="Enter Address" value="<%= user.address %>"/>
+        </div>
+        <div class="mb-3">
+            <input type="submit" name="submit" value="Update User" class="btn btn-primary btn-lg" />
+        </div>
+    </form>
+</body>
+</html>

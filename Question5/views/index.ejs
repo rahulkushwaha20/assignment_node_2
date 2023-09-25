@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, <%=locals.name%></h1>
+    <li><a href="/">Home</a></li>
+    <li><a href="/add">Add</a></li>  
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Department</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% user.forEach((row, index) => { %>
+                <tr>
+                    <td><%= index %></td>
+                    <td><%= row.name %></td>
+                    <td><%= row.roll_no %></td>
+                    <td><%= row.dept %></td>
+                    <td><%= row.address %></td>
+
+                    <td>
+                        <a href="/edit/<%= row._id %>">Edit</a>
+                        <a href="/delete/<%= row._id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <form action="/logout" method="post">
+        <button type="submit" name="submit" class="btn">Log Out</button>
+    </form> 
+   </body>
+</html>
